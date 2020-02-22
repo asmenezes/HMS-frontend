@@ -1,0 +1,20 @@
+export class RoomResult
+  {
+    rtid:string;
+    roomname:string;
+    numavail:number;
+    totalcost?:number;
+    numbeds?:number;
+    maxguests?:number;
+    maxpets?:number;
+    roomdesc?:string;
+    hasmicro?:boolean;
+    haskitch?:boolean;
+    hasfridge?:boolean;
+    imgs?:
+    [
+      {
+      url:string;
+      }
+    ]
+  }

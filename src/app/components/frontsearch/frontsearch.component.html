@@ -1,0 +1,31 @@
+<div id="frontsearch">
+
+  <div id="welcomeblurb">
+<h1>Welcome</h1>
+<p>To book a room at our hotel search for rooms using the tools below.</p>
+
+  <form class="frontsearchform" (ngSubmit)="onSubmit()" action='/search' method="post">
+    <label for="startdate">Check in date: </label>
+    <input [(ngModel)]= "searchItem.startdate" type="date" name="startdate" value="">
+    <label for="endDate">  Check out date: </label>
+    <input [(ngModel)]= "searchItem.enddate" type="date" name="enddate" value="">
+    <label for="selguests">  Guests </label>
+    <select [(ngModel)]= "searchItem.maxguests" class="" name="selguests">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+
+    </select>
+    <label for="selpets">  Pets </label>
+    <select [(ngModel)]= "searchItem.maxpets" class="" name="selpets">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <input type="submit" id="frontsearchsubmit" value="Submit">
+  </form>
+  </div>
+</div>

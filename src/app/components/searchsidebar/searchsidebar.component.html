@@ -1,0 +1,53 @@
+<div class="searchsidebar">
+
+  <form class="searchsidebarform" (ngSubmit)="onSubmit()" action="/search" method="post">
+
+    <label for="startDate">Check in date: </label>
+    <input [(ngModel)]= "searchItem.startdate" type="date" name="startdate" value="">
+
+    <label for="endDate">  Check out date: </label>
+    <input [(ngModel)]= "searchItem.enddate"  type="date" name="enddate" value="">
+
+<div class="amenSelect">
+
+    <label for="selguests">  Guests: </label>
+    <select [(ngModel)]= "searchItem.maxguests"  class="" name="selguests">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+</div>
+
+<div class="amenSelect">
+    <label for="selpets">  Pets: </label>
+    <select [(ngModel)]= "searchItem.maxpets"  class="" name="selpets">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+</div>
+    <p>Select any additional requirements:<br></p>
+
+    <div class="amenSelect">
+    <label for="reqmicro">Microwave   </label>
+    <input [(ngModel)]= "searchItem.hasmicro"  type="checkbox" name="reqmicro" value="">
+    </div>
+
+    <div class="amenSelect">
+    <label for="reqFridge">Mini-Fridge   </label>
+    <input [(ngModel)]= "searchItem.hasfridge"  type="checkbox" name="reqfridge" value="">
+    </div>
+
+    <div class="amenSelect">
+    <label for="reqcouch">Couch   </label>
+    <input  [(ngModel)]= "searchItem.hascouch" type="checkbox" name="reqcouch" value="">
+    </div>
+
+    <input type="submit" id="frontsearchsubmit" value="Go">
+
+  </form>
+
+</div>

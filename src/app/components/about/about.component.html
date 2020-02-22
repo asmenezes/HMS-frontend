@@ -1,0 +1,407 @@
+<div class="page">
+  <mat-tab-group dynamicHeight>
+  <mat-tab label="About">
+    <div >
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <h2 matLine> Overview of HMS </h2>
+          <p matLine>  HMS is an application designed for the management of every aspect of a Hotel. <br>The goal is to create an application that anybody involved with the hotel can use to access all the information they need as well as perform appropriate actions. </p>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <h2 matLine> Proposed Features </h2>
+          <p matLine>  Search available rooms</p>
+          <p matLine>  View information about various rooms </p>
+          <p matLine>  Book an available room </p>
+          <p matLine>  Guest account creation and login </p>
+          <p matLine>  This very about page </p>
+          <p matLine>  Search available rooms </p>
+          <p matLine>  Room creation and editing </p>
+          <p matLine>  View of scheduled bookings </p>
+          <p matLine>  Room service scheduling and monitoring system </p>
+          <p matLine>  Room Service request system </p>
+          <p matLine>  Maintenance request system </p>
+          <p matLine>  Staff management system </p>
+          <p matLine>  Dynamic room pricing </p>
+          <p matLine>  Check-in/Check-out System </p>
+          <p matLine>  Modular review system </p>
+        </mat-list-item>
+      </mat-list>
+
+      <h1>Use Cases and functionality</h1>
+
+      <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header color="primary">
+          <mat-panel-title color="primary">
+            Guest
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      <mat-list>
+      <mat-list-item>Should be able to search for available rooms based on input criteria</mat-list-item>
+      <mat-list-item>Should be able to book an available room (and only an available room)</mat-list-item>
+      <mat-list-item>Should be able to view their booking details </mat-list-item>
+      <mat-list-item>Should be able to check-in and out of the hotel </mat-list-item>
+      <mat-list-item>Should be able to make requests of Housekeeping, Reception and Maintenance</mat-list-item>
+      <mat-list-item>Should be able to view the status of thier room and requests </mat-list-item>
+      <mat-list-item> Should be able to create an account </mat-list-item>
+      <mat-list-item>Should be restricted to appropriate priveledges </mat-list-item>
+      </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Manager - Staff
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      <mat-list>
+      <mat-list-item>Should be able to view all booking information </mat-list-item>
+      <mat-list-item>Should be able to view staff information</mat-list-item>
+      <mat-list-item>Should be able to create and modify staff accounts</mat-list-item>
+      <mat-list-item>Should be able to view all request's of any type</mat-list-item>
+      <mat-list-item>Should be able to view and set schedules </mat-list-item>
+      </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            House-Keeping - Staff
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      <mat-list>
+      <mat-list-item>Should be able to view schedule and appropriate employee information</mat-list-item>
+      <mat-list-item>Should be able to view and update house-keeping requests </mat-list-item>
+      </mat-list>
+      </mat-expansion-panel>
+        <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Maintenance - Staff
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    <mat-list>
+    <mat-list-item>Should be able to view and update Maintenance requests </mat-list-item>
+    <mat-list-item>Should be able to view Schedule and appropriate employee information</mat-list-item>
+    </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+      Reception - Staff
+    </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+    <mat-list-item>Should be able to view, create and modify bookings </mat-list-item>
+    <mat-list-item>Should be able to check guests in and out</mat-list-item>
+    <mat-list-item>Should be able to make and view requests both for reception as well as on behalf of guests </mat-list-item>
+    </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+      Restaurant - Staff
+    </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+    <mat-list-item>Should be able to view room service and reservation requests</mat-list-item>
+    <mat-list-item>Should be able to edit menu</mat-list-item>
+    </mat-list>
+    </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Front-End">
+    <div >
+        <p>The front end is made with Angular 9, Angular Materials for additional UI components and functionality, SASS for CSS preprocessing, and of course typescript and HTML5. </p>
+      <p>Every page has three sections, a header, footer and the main content. The header and footer are constant and a router between them switches views for the rest of the functionality of the app.
+      </p>
+      <p>The header is displayed above every page and by default shows four things, username/email input, password input and a submit button to log in with said input, as well as a signup button if one does not already have an account. The sign up button in the header can only be used to create accounts for hotel guests, for security reasons a manager must create employee accounts. </p>
+      <p>The signup page is a modal window that contains a form that users can input the correct information to create a guest account. It contains fields for Username, email, password, repeated password, first name, last name and phone. Then the page will send the appropriate postrequest to the backend to attempt to create an account. If the account creation is unsuccesful for whatever reason the user will be alerted.</p>
+      <p>The footer contains three items, my name, the year and the router link to this about page. </p>
+    <p>  The main component of the default/index page of HMS is a welcome page with a search component on it. Once search
+    parameters are entered into the correct fields the submit button sends the parameters to the url and is redirected to the search page which does the actual quering</p>
+    <p>The search page consists of two main parts, the sidebar and the search reulsts. Upon initialization the search page pulls the search parameters from the url, loads them into the sidebar and queries the database by making the appropriate post request to the backend. The backend responds with the results which are used to create result items. Result items are created dynamically and displayed on the search results half of the page. When clicked the user is redirected to the room information page.  </p>
+    <p>The room information page is the page that is shown after the user selects an available room to book. Information is again passed via the url, this time providing information about the room avaliable for booking. It displays information about the room and includes a form for submitting a booking. While a guest account is logged in parts of the form may be prefilled for faster booking. </p>
+    <p>Once the listed pages are all complete several additional ones will be added to further expand on functionality and incorporate more of the proposed features.</p>
+    <p>Additional pages and components will be added in the future to accomodate additional features.</p>
+    give sample gui pages and component makeup
+    </div>
+  </mat-tab>
+  <mat-tab label="Back-End">
+    <div >
+      <p>The back end is a node.js server deployed on Heroku. It uses a Heroku PostGreSQL addon to connect to a PostGreSQL database also hosted by Heroku. </p>
+      <p>The back end is written using a node.JS runtime environment utilizing several dependencies to properly connect itself both with the database and the front end. Express is used to create the api, the routes and connect with the front end. Node-postgres is used to maintain a connection with the database and to query it using information passed along in post requests. CORS is used to allow post requests with object bodies from the front end which is stored elsewhere. UUID is used to create unique strings, this will be phased out for serials and names though. </p>
+      <p>Currently post requests routed to search, are passed in via a POST request, converted to a search item with default values inserted where nessesary. Then a connection is made with the database and a query using the properties of the search item as placeholders in the query. The query returns every room avaialble that does not interfere with any search parameters or booking already in the system. A search item object is then created and sent back in the response to the front end. The search query and returned objects are constantly being optimized so functionality may be on/off while changes are being made.</p>
+      <p>The book route takes in booking information from another post request and queries the database, again with placeholders, to put a booking in the database. Since only available rooms are returned in search no additional validation done in terms of checking for scheduling collisions. A response is send back with a success.</p>
+      <p>The login route accepts a post request containing an email or username and a password. The database is queried to see if the database contains either the username or the email that was entered. If not the user is sent back an error, if so then the password hash is pulled from the database and compared to a rehash of the freshly entered password. This keeps the database from storing passwords in plaintext. Upon succesful login the response contains appropriate user information. Depending on the account type the user may be redirected to different pages of the application.</p>
+      <p>The signup route takes in a post request containing the desired username, password, email, phone number first and last names. It queries the database to make sure that there are currently no users in the database with the same, Username, email, or phone number. If it finds them, then it sends a result indicating so. If not then it hashes the password and inputs all of the information into the database, adding the user type (guest) and incrementing the PID (person id number) for this user. A response is sent to indicate success.</p>
+      <p>Additional routes will be added in the future when implementing additional features.</p>
+    </div>
+  </mat-tab>
+  <mat-tab label="Database">
+    <div >
+
+    <mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Bookings Table
+      </mat-panel-title>
+      <mat-panel-description>
+        details
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table>
+  <tr>
+  <th>Column</th>
+  <th>Type</th>
+  <th>Conditions</th>
+  <th>Notes</th>
+  </tr>
+  <tr>
+  <td>bookingnum</td>
+  <td>serial</td>
+  <td>NOT NULL PRIMARY KEY</td>
+  <td>Unique identifier for a booking, in int form, auto incremented by database  </td>
+  </tr>
+  <tr>
+  <td>checkedin</td>
+  <td>boolean</td>
+  <td>NOT NULL</td>
+  <td>Boolean indicating whether or not guest has checked in for this stay</td>
+  </tr>
+  <tr>
+  <td>checkedout</td>
+  <td>boolean</td>
+  <td>NOT NULL</td>
+  <td>Boolean indicating whether or not guest has checked out for this stay</td>
+  </tr>
+  <tr>
+  <td>enddate</td>
+  <td>date</td>
+  <td>NOT NULL</td>
+  <td>Date that booking ends</td>
+  </tr>
+  <tr>
+  <td>startdate</td>
+  <td>date</td>
+  <td>NOT NULL</td>
+    <td>Date that booking starts</td>
+  </tr>
+  <tr>
+  <td>paid</td>
+  <td>boolean</td>
+  <td>NOT NULL</td>
+  <td>Boolean indicating whether or not guest has paid for this stay</td>
+  </tr>
+  <tr>
+  <td>pid</td>
+  <td>int</td>
+  <td>FOREIGN KEY NOT NULL</td>
+  <td>Integer indicating which account made the booking</td>
+  </tr>
+  <tr>
+  <td>roomnum</td>
+  <td>int</td>
+  <td>FOREIGN KEY NOT NULL</td>
+  <td> Integer representing the room that has been booked.</td>
+  </tr>
+</table>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Accounts Table
+      </mat-panel-title>
+      <mat-panel-description>
+        details
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table>
+<tr>
+  <th>Column</th>
+  <th>Type</th>
+  <th>Conditions</th>
+  <th>Notes</th>
+</tr>
+<tr>
+  <td>accttype</td>
+  <td>int</td>
+  <td>NOT NULL</td>
+  <td>Integer indicating account type/access level </td>
+</tr>
+<tr>
+  <td>email</td>
+  <td>varchar</td>
+  <td>NOT NULL UNIQUE </td>
+  <td>Account holders email address, can be used to login</td>
+</tr>
+<tr>
+  <td>firtname</td>
+  <td>varchar</td>
+  <td>NOT NULL</td>
+  <td>First name of account holder</td>
+</tr>
+<tr>
+  <td>lastname</td>
+  <td>varchar</td>
+  <td>NOT NULL</td>
+  <td>Last name of account holder</td>
+</tr>
+<tr>
+  <td>password</td>
+  <td>varchar</td>
+  <td>NOT NULL</td>
+  <td>hashed value of the users password, not stored in plain text.</td>
+</tr>
+<tr>
+  <td>phone</td>
+  <td>varchar</td>
+  <td>NOT NULL UNIQUE</td>
+  <td>Phone number of account holder</td>
+</tr>
+<tr>
+  <td>pid</td>
+  <td>serial</td>
+  <td>PRIMARY KEY NOT NULL</td>
+  <td>Integer indicating unique account number, incremented by database</td>
+</tr>
+<tr>
+  <td>username</td>
+  <td>varchar</td>
+  <td>UNIQUE NOT NULL</td>
+  <td>Username of account holder</td>
+</tr>
+</table>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Room Catalog Table
+      </mat-panel-title>
+      <mat-panel-description>
+        details
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table>
+      <tr>
+        <th>Column</th>
+        <th>Type</th>
+        <th>Conditions</th>
+        <th>Notes</th>
+      </tr>
+    <tr>
+      <td>allowedpets</td>
+      <td>int</td>
+      <td>NOT NULL</td>
+      <td>Number of pets allowed in the room</td>
+    </tr>
+    <tr>
+      <td>roomnum</td>
+      <td>int</td>
+      <td>PRIMARY KEY NOT NULL</td>
+      <td>Unique room number.</td>
+    </tr>
+    <tr>
+      <td>rtid</td>
+      <td>varchar</td>
+      <td>FOREIGN KEY NOT NULL</td>
+      <td>varchar indicating the type of room it is, will be replaced by roomname</td>
+    </tr>
+  </table>
+
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Room Types Table
+      </mat-panel-title>
+      <mat-panel-description>
+        details
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table>
+<tr>
+  <th>Column</th>
+  <th>Type</th>
+  <th>Conditions</th>
+  <th>Notes</th>
+</tr>
+<tr>
+  <td>cost</td>
+  <td>int</td>
+  <td>NOT NULL</td>
+  <td>Cost of the room per night.  </td>
+</tr>
+<p>Room Types</p>
+<tr>
+  <td>description</td>
+  <td>text</td>
+  <td>NOT NULL</td>
+  <td>Description of the room.</td>
+</tr>
+<tr>
+  <td>hascouch</td>
+  <td>boolean</td>
+  <td>NOT NULL</td>
+  <td>Boolean indicating whether or not the room contains a couch.</td>
+</tr>
+<tr>
+  <td>hasfridge</td>
+  <td>boolean</td>
+  <td>NOT NULL</td>
+  <td>Boolean indicating whether or not the room has a mini-fridge.</td>
+</tr>
+<tr>
+  <td>hasKitch</td>
+  <td>boolean</td>
+  <td>NOT NULL</td>
+  <td>boolean indicating whether or not the room has a small kitchen. (The amenities in the kitschen do not   count for has fridge or has microwave)</td>
+</tr>
+<tr>
+  <td>hasmicrowave</td>
+  <td>boolean</td>
+  <td>NOT NULL</td>
+  <td>Boolean indicating whether or not the room contains a microwave (not in kitchen)</td>
+</tr>
+<tr>
+  <td>maxpeople</td>
+  <td>int</td>
+  <td>NOT NULL</td>
+  <td>Integer indicating the maximum number of guests allowed in the room.</td>
+</tr>
+<tr>
+  <td>numbeds</td>
+  <td>int</td>
+  <td>NOT NULL</td>
+  <td>Integer indicating the number of beds the room contains.</td>
+</tr>
+<tr>
+  <td>roomname</td>
+  <td>varchar</td>
+  <td>UNIQUE NOT NULL</td>
+  <td>varchar of the rooms name, possibly will replace rtid as primary key.</td>
+</tr>
+<tr>
+  <td>rtid</td>
+  <td>varchar</td>
+  <td>NOT NULL PRIMARY KEY </td>
+  <td>varchar of unique room type id (will be removed and roomname used in its place as having both is redundant)</td>
+</tr>
+</table>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<p>Additional tables will be added in the future when implementing additional features.</p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+
+
+
+
+</div>
