@@ -13,6 +13,7 @@ import { SearchsidebarComponent } from './components/searchsidebar/searchsidebar
 import { MainresultsComponent } from './components/mainresults/mainresults.component';
 import { ResultitemComponent } from './components/resultitem/resultitem.component';
 import { ResultscontainerComponent } from './components/resultscontainer/resultscontainer.component';
+
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AboutComponent } from     './components/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,8 +49,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { RoombookComponent } from './roombook/roombook.component';
-import { RoombookformComponent } from './roombookform/roombookform.component';
+import { RoombookComponent } from './components/roombook/roombook.component';
+import { RoombookformComponent } from './components/roombookform/roombookform.component';
 
 
 
