@@ -26,6 +26,11 @@ searchItem:RoomSearchItem = {
   hasfridge:false,
   hascouch:false
 }
+
+book(roomname:string) {
+      window.location.href = `book/?startdate=${this.searchItem.startdate}&enddate=${this.searchItem.enddate}&roomname=${roomname}`
+      //add room type
+}
 constructor(private searchService:SearchservService) { }
 
 ngOnInit(): void {

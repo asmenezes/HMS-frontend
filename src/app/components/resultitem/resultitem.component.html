@@ -3,7 +3,7 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{result.roomname}}</mat-card-title>
-    <mat-card-subtitle>Room</mat-card-subtitle>
+    <mat-card-subtitle>Available</mat-card-subtitle>
   </mat-card-header>
     <mat-card-content>
     <p>
@@ -12,6 +12,6 @@
   </mat-card-content>
   <mat-card-actions>
         <h4 class = "cost">Cost per night ${{result.cost}}</h4>
-    <button mat-button>Book</button>
+    <button (click) = "book(result.roomname)" mat-button>Book</button>
   </mat-card-actions>
 </mat-card>
