@@ -1,8 +1,7 @@
 export class RoomResult
   {
-    rtid:string;
     roomname:string;
-    numavail:number;
+    numavail?:number;
     totalcost?:number;
     numbeds?:number;
     maxguests?:number;

@@ -30,14 +30,7 @@ constructor(private searchService:SearchservService) { }
 
 ngOnInit(): void {
   this.searchService.searchRooms(this.searchItem).subscribe((res) => {
-    // for(result in res){
-    //   if (this.results.includes(result.roomnamee)){
-    //     this.results.numavail += 1;
-    //   }else{
-    //     this.results.push({roomname:res.roomname, numavail: 1, rtid:res.rtid })
-    //   }
-    // }
-
+    this.results = res
     console.log(this.results)
   });
 }

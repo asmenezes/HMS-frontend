@@ -1,7 +1,25 @@
-<div class = "resultitem" *ngFor="let result of results">
+<!-- <div class = "resultitem" *ngFor="let result of results">
   <h3>{{ result.roomname }}</h3>
-  <p>{{ result.roomdesc }}</p>
-  <!-- <h4 class = "costDisp">${{ result.totalcost }}</h4> -->
+  <p>{{ result.description }}</p>
+  <h4 class = "costDisp">${{ result.cost }}</h4>
   <button type="button" name="book">Book</button>
   <!-- <p>Only {{ result.numavail }} left</p> -->
-</div>
+<!-- </div> -->
+
+
+<mat-card class="resultitem" *ngFor="let result of results">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{result.roomname}}</mat-card-title>
+    <mat-card-subtitle>Room</mat-card-subtitle>
+  </mat-card-header>
+    <mat-card-content>
+    <p>
+    {{result.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+        <h4 class = "cost">Cost per night ${{result.cost}}</h4>
+    <button mat-button>Book</button>
+  </mat-card-actions>
+</mat-card>
