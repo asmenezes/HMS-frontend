@@ -4,6 +4,7 @@ import { WelcomescreenComponent } from './components/welcomescreen/welcomescreen
 import { MainresultsComponent } from './components/mainresults/mainresults.component'
 import { NotfoundComponent } from './components/notfound/notfound.component'
 import { AboutComponent } from './components/about/about.component'
+import { RoombookComponent} from './components/roombook/roombook.component'
 
 
 const routes: Routes = [
@@ -15,6 +16,9 @@ const routes: Routes = [
   },
   {
     path: 'about' , component: AboutComponent
+  },
+  {
+    path: 'book' , component: RoombookComponent
   }
   //,{ path: '/', component: WelcomescreenComponent}
 
