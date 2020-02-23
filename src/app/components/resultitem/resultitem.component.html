@@ -1,5 +1,5 @@
 
-<mat-card class="resultitem" *ngFor="let result of results">
+<mat-card color = "primary" tabindex="0" class="resultitem" *ngFor="let result of results">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{result.roomname}}</mat-card-title>
@@ -12,6 +12,6 @@
   </mat-card-content>
   <mat-card-actions>
         <h4 class = "cost">Cost per night ${{result.cost}}</h4>
-    <button (click) = "book(result.roomname)" mat-button>Book</button>
+    <button mat-raised-button color="primary" (click) = "book(result.roomname)" >Book</button>
   </mat-card-actions>
 </mat-card>

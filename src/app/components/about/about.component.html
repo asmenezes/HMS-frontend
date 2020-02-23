@@ -3,7 +3,9 @@
   <mat-tab label="About">
     <div >
       <h2 > Overview of HMS </h2>
-      <p >  HMS is an application designed for the management of every aspect of a Hotel. The goal is to create an application that anybody involved with the hotel can use to access all the information they need as well as perform appropriate actions. </p>
+      <p >  HMS is an application designed for the management of every aspect of a Hotel. The goal is to create an application that anybody involved with the hotel can use to access all the information they need as well as perform appropriate actions.
+<span style="color:red">After learning about Angular Materials I have decided to restructure the app to take advantage of it and ultimately simplify the internal structure of the front end, this will take time as I figure out how to best change the structure for the simplest but equally effective design. Until that is figured out and the app is converted several functions may be disabled, non-functioning or in a temporarily wonky/unfinished state.</span>
+      </p>
       <mat-list role="list">
         <h2 > Proposed Features </h2>
         <mat-list-item role="listitem">
@@ -113,7 +115,7 @@
         <p>The front end is made with Angular 9, Angular Materials for additional UI components and functionality, SASS for CSS preprocessing, and of course typescript and HTML5. </p>
       <p>Every page has three sections, a header, footer and the main content. The header and footer are constant and a router between them switches views for the rest of the functionality of the app.
       </p>
-      <p>The header is displayed above every page and by default shows four things, username/email input, password input and a submit button to log in with said input, as well as a signup button if one does not already have an account. The sign up button in the header can only be used to create accounts for hotel guests, for security reasons a manager must create employee accounts. </p>
+      <p>The header is displayed above every page and by default shows four things, username/email input, password input and a submit button to log in with said input, as well as a signup button if one does not already have an account. The sign up button in the header can only be used to create accounts for hotel guests, for security reasons a manager must create employee accounts. <span style="color:red">The Header is being changed from a standard form to an Angular Materials toolbar and will be disabled along with its connected functionality until it is complete.</span></p>
       <p>The signup page is a modal window that contains a form that users can input the correct information to create a guest account. It contains fields for Username, email, password, repeated password, first name, last name and phone. Then the page will send the appropriate postrequest to the backend to attempt to create an account. If the account creation is unsuccesful for whatever reason the user will be alerted.</p>
       <p>The footer contains three items, my name, the year and the router link to this about page. </p>
     <p>  The main component of the default/index page of HMS is a welcome page with a search component on it. Once search

@@ -14,6 +14,7 @@ export class SearchsidebarComponent implements OnInit {
    url = new URL(this.url_string);
 
   searchItem:RoomSearchItem = {
+
     startdate:  this.url.searchParams.get("startdate"),
     enddate:  this.url.searchParams.get("enddate"),
      maxguests:  Number(this.url.searchParams.get("maxguests")),
