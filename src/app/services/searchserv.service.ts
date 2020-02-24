@@ -23,7 +23,7 @@ export class SearchservService {
 
   searchRooms(searchItem:RoomSearchItem ):Observable<any>
 {
-  console.log("submitted")
+  console.log("submitted search service")
   console.log(this.http.post<any>(this.searchURL,searchItem,httpOptions))
     return this.http.post<RoomSearchItem>(this.searchURL,searchItem,httpOptions);
 }

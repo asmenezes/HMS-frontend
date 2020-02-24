@@ -3,6 +3,7 @@ import { RoomResult } from '../../models/roomresult';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchservService} from '../../services/searchserv.service'
 import { RoomSearchItem } from '../../models/roomsearchitem'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-resultitem',
@@ -28,10 +29,18 @@ searchItem:RoomSearchItem = {
 }
 
 book(roomname:string) {
-      window.location.href = `book/?startdate=${this.searchItem.startdate}&enddate=${this.searchItem.enddate}&roomname=${roomname}`
+      // window.location.href = `book/?startdate=${this.searchItem.startdate}&enddate=${this.searchItem.enddate}&roomname=${roomname}`
+      let params = {
+        startdate: this.searchItem.startdate,
+        enddate: this.searchItem.enddate,
+        maxguests: this.searchItem.maxguests,
+        maxpets: this.searchItem.maxpets
+      };
+
+      this.router.navigate(['/book'], { queryParams: params });
       //add room type
 }
-constructor(private searchService:SearchservService) { }
+constructor(private searchService:SearchservService,private router:Router) { }
 
 ngOnInit(): void {
   this.searchService.searchRooms(this.searchItem).subscribe((res) => {

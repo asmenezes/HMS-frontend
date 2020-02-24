@@ -76,7 +76,12 @@ console.log(e)
       maxpets: this.searchItem.maxpets
     };
 
-    this.router.navigate(['/search'], { queryParams: params });
+
+    // this.router.navigate(['/search'], { queryParams: params });
+    this.searchService.searchRooms(this.searchItem).subscribe((res) => {
+      console.log(res)
+
+    });
   }
 
 
