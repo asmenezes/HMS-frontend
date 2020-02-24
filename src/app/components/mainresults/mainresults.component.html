@@ -1,7 +1,77 @@
-<div class="sidebarSplitter">
-  <app-searchsidebar
+<div >
+  <!-- <app-searchsidebar
 (searchBookings)="search($event)"
-  ></app-searchsidebar>
-  <app-resultscontainer></app-resultscontainer>
+  ></app-searchsidebar> -->
+
+  <mat-drawer-container class="searchresults">
+  <mat-drawer  mode="side" opened><div class="searchsidebar">
+<div class="sidebar">
+
+
+      <mat-form-field>
+      <mat-label>Start date</mat-label>
+      <input matInput  [(ngModel)]="today" name = "startdate"  [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+    <mat-label>End date</mat-label>
+    <input matInput [(ngModel)]="mindate" name="enddate" [matDatepicker]="picker2">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker  #picker2></mat-datepicker>
+    </mat-form-field>
+
+  <div class="amenSelect">
+  <mat-form-field>
+      <mat-label for="selguests">  Guests: </mat-label>
+      <mat-select [(ngModel)]= "searchItem.maxguests"  class="" name="selguests">
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5">5</mat-option>
+        <mat-option value="6">6</mat-option>
+      </mat-select>
+        </mat-form-field>
+  </div>
+
+  <div class="amenSelect">
+      <mat-form-field>
+      <mat-label for="selpets">  Pets: </mat-label>
+      <mat-select [(ngModel)]= "searchItem.maxpets"  class="" name="selpets">
+        <mat-option value="0">0</mat-option>
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+      </mat-select>
+        </mat-form-field>
+  </div>
+      <p>Select any additional requirements:<br></p>
+
+      <div class="amenSelect">
+      <label for="reqmicro">Microwave   </label>
+      <input [(ngModel)]= "searchItem.hasmicro"  type="checkbox" name="reqmicro" value="">
+      </div>
+
+      <div class="amenSelect">
+      <label for="reqFridge">Mini-Fridge   </label>
+      <input [(ngModel)]= "searchItem.hasfridge"  type="checkbox" name="reqfridge" value="">
+      </div>
+
+      <div class="amenSelect">
+      <label for="reqcouch">Couch   </label>
+      <input  [(ngModel)]= "searchItem.hascouch" type="checkbox" name="reqcouch" value="">
+      </div>
+
+      <button (click)="onSubmit()" mat-button>Search</button>
+
+
+
+  </div>
+  </div>
+</mat-drawer>
+  <mat-drawer-content>  <app-resultscontainer></app-resultscontainer></mat-drawer-content>
+</mat-drawer-container>
+
+
 
 </div>

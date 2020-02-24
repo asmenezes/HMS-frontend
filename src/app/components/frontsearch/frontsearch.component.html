@@ -21,23 +21,28 @@
   <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
   <mat-datepicker  #picker2></mat-datepicker>
   </mat-form-field>
-    <label for="selguests">  Guests </label>
-    <select [(ngModel)]= "searchItem.maxguests" class="" name="selguests">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
+  <mat-form-field>
+    <mat-label for="selguests">  Guests </mat-label>
+    <mat-select [(ngModel)]= "searchItem.maxguests" class="" name="selguests">
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+      <mat-option value="4">4</mat-option>
+      <mat-option value="5">5</mat-option>
+      <mat-option value="6">6</mat-option>
 
-    </select>
-    <label for="selpets">  Pets </label>
-    <select [(ngModel)]= "searchItem.maxpets" class="" name="selpets">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-    </select>
-    <input type="submit" id="frontsearchsubmit" value="Submit">
+    </mat-select>
+    </mat-form-field>
+      <mat-form-field>
+    <mat-label for="selpets">  Pets </mat-label>
+    <mat-select [(ngModel)]= "searchItem.maxpets" class="" name="selpets">
+      <mat-option value="0">0</mat-option>
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+    </mat-select>
+    </mat-form-field>
+      <button (click)="onSubmit()" mat-button>Search</button>
+
   </form>
   </div>
 </div>

@@ -11,7 +11,8 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
+      <button mat-raised-button color="primary" (click) = "book(result.roomname)" >Book</button>
         <h4 class = "cost">Cost per night ${{result.cost}}</h4>
-    <button mat-raised-button color="primary" (click) = "book(result.roomname)" >Book</button>
+
   </mat-card-actions>
 </mat-card>

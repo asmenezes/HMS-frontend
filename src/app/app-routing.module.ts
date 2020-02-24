@@ -7,7 +7,7 @@ import { AboutComponent } from './components/about/about.component'
 import { RoombookComponent} from './components/roombook/roombook.component'
 
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '', component: WelcomescreenComponent
   },

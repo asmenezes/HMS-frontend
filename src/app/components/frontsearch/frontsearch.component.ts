@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { RoomSearchItem } from '../../models/roomsearchitem';
+import { Router } from '@angular/router'
 
 import { HttpClientModule } from '@angular/common/http';
 import { SearchservService} from '../../services/searchserv.service'
@@ -29,7 +30,7 @@ export class FrontsearchComponent implements OnInit {
    }
 //`${this.today.getFullYear()}/${this.today.getMonth()}/${this.today.getDate()}`
 
-  constructor(private searchService:SearchservService) { }
+  constructor(private searchService:SearchservService,private router:Router) { }
 
   ngOnInit(): void {
     console.log(this.searchItem.startdate)
@@ -61,7 +62,17 @@ export class FrontsearchComponent implements OnInit {
     }else{
     mindatepad2 = '0'
     }
-    window.location.href = `search/?startdate=${this.today.getFullYear()}-${todaypad}${this.today.getMonth() + 1}-${datepad}${this.today.getDate()}&enddate=${this.mindate.getFullYear()}-${mindatepad}${this.mindate.getMonth() + 1}-${mindatepad2}${this.mindate.getDate()}&maxguests=${this.searchItem.maxguests}&maxpets=${this.searchItem.maxpets}`
+
+    let params = {
+      startdate: `${this.today.getFullYear()}-${todaypad}${this.today.getMonth() + 1}-${datepad}${this.today.getDate()}`,
+      enddate: `${this.mindate.getFullYear()}-${mindatepad}${this.mindate.getMonth() + 1}-${mindatepad2}${this.mindate.getDate()}`,
+      maxguests: this.searchItem.maxguests,
+      maxpets: this.searchItem.maxpets
+    };
+
+    this.router.navigate(['/search'], { queryParams: params });
+// this.router.navigate(['/search',`${this.today.getFullYear()}-${todaypad}${this.today.getMonth() + 1}-${datepad}${this.today.getDate()}`,`${this.mindate.getFullYear()}-${mindatepad}${this.mindate.getMonth() + 1}-${mindatepad2}${this.mindate.getDate()}`,this.searchItem.maxguests,this.searchItem.maxpets])
+    // window.location.href = `search/?startdate=${this.today.getFullYear()}-${todaypad}${this.today.getMonth() + 1}-${datepad}${this.today.getDate()}&enddate=${this.mindate.getFullYear()}-${mindatepad}${this.mindate.getMonth() + 1}-${mindatepad2}${this.mindate.getDate()}&maxguests=${this.searchItem.maxguests}&maxpets=${this.searchItem.maxpets}`
 
   }
 
