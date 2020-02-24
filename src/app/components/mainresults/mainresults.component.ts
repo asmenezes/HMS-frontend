@@ -34,13 +34,6 @@ console.log(e)
   }
 
 
-// searchItem:RoomSearchItem = {
-//    startdate: `${this.today.getFullYear()}-${this.today.getMonth()}-${this.today.getDate()}`,
-//    enddate:  `${this.mindate.getFullYear()}-${this.mindate.getMonth()}-${this.mindate.getDate()}`,
-//    maxguests:  1,
-//    maxpets:  0
-//  }
-
   constructor(private searchService:SearchservService,private router:Router) { }
 
   ngOnInit(): void {

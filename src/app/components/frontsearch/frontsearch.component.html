@@ -5,10 +5,7 @@
 <p>To book a room at our hotel search for rooms using the tools below.</p>
 
   <form class="frontsearchform" (ngSubmit)="onSubmit()" action='/search' method="post">
-    <!-- <label for="startdate">Check in date: </label>
-    <input [(ngModel)]= "searchItem.startdate" type="date" name="startdate" value="">
-    <label for="endDate">  Check out date: </label>
-    <input [(ngModel)]= "searchItem.enddate" type="date" name="enddate" value=""> -->
+
     <mat-form-field>
     <mat-label>Start date</mat-label>
     <input matInput  [(ngModel)]="today" name = "startdate"  [matDatepicker]="picker">

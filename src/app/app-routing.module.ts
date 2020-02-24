@@ -19,8 +19,11 @@ export const routes: Routes = [
   },
   {
     path: 'book' , component: RoombookComponent
+  },
+  {
+    path: '**' , component: NotfoundComponent
   }
-  //,{ path: '/', component: WelcomescreenComponent}
+
 
 ];
 

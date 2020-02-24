@@ -11,9 +11,6 @@ import { SearchservService} from '../../services/searchserv.service'
   styleUrls: ['./frontsearch.component.sass']
 })
 
-  //public searchItem:RoomSearchItem = {};
-
-//on submit to create search item, then route to search results and pass item
 
 export class FrontsearchComponent implements OnInit {
 
@@ -28,7 +25,6 @@ export class FrontsearchComponent implements OnInit {
      maxguests:  1,
      maxpets:  0
    }
-//`${this.today.getFullYear()}/${this.today.getMonth()}/${this.today.getDate()}`
 
   constructor(private searchService:SearchservService,private router:Router) { }
 
@@ -71,8 +67,6 @@ export class FrontsearchComponent implements OnInit {
     };
 
     this.router.navigate(['/search'], { queryParams: params });
-// this.router.navigate(['/search',`${this.today.getFullYear()}-${todaypad}${this.today.getMonth() + 1}-${datepad}${this.today.getDate()}`,`${this.mindate.getFullYear()}-${mindatepad}${this.mindate.getMonth() + 1}-${mindatepad2}${this.mindate.getDate()}`,this.searchItem.maxguests,this.searchItem.maxpets])
-    // window.location.href = `search/?startdate=${this.today.getFullYear()}-${todaypad}${this.today.getMonth() + 1}-${datepad}${this.today.getDate()}&enddate=${this.mindate.getFullYear()}-${mindatepad}${this.mindate.getMonth() + 1}-${mindatepad2}${this.mindate.getDate()}&maxguests=${this.searchItem.maxguests}&maxpets=${this.searchItem.maxpets}`
 
   }
 
