@@ -47,20 +47,13 @@
   </div>
       <p>Select any additional requirements:<br></p>
 
-      <div class="amenSelect">
-      <label for="reqmicro">Microwave   </label>
-      <input [(ngModel)]= "searchItem.hasmicro"  type="checkbox" name="reqmicro" value="">
-      </div>
+    <mat-checkbox [(ngModel)]= "searchItem.hasmicro"  name="reqmicro" value="">Microwave</mat-checkbox>
 
-      <div class="amenSelect">
-      <label for="reqFridge">Mini-Fridge   </label>
-      <input [(ngModel)]= "searchItem.hasfridge"  type="checkbox" name="reqfridge" value="">
-      </div>
+    <mat-checkbox [(ngModel)]= "searchItem.hasfridge"  name="reqfridge" value="">Mini-Fridge</mat-checkbox>
 
-      <div class="amenSelect">
-      <label for="reqcouch">Couch   </label>
-      <input  [(ngModel)]= "searchItem.hascouch" type="checkbox" name="reqcouch" value="">
-      </div>
+<mat-checkbox [(ngModel)]= "searchItem.haskitch"  name="reqkitch" value="">Kitchenette</mat-checkbox>
+
+<mat-checkbox [(ngModel)]= "searchItem.hascouch"  name="reqcouch" value="">Couch</mat-checkbox>
 
       <button (click)="onSubmit()" mat-button>Search</button>
 
