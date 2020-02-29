@@ -7,6 +7,7 @@
   <mat-drawer  mode="side" opened><div class="searchsidebar">
 <div class="sidebar">
 
+<form class="searchform" action="index.html" method="post">
 
       <mat-form-field>
       <mat-label>Start date</mat-label>
@@ -22,28 +23,28 @@
     </mat-form-field>
 
   <div class="amenSelect">
-  <mat-form-field>
-      <mat-label for="selguests">  Guests: </mat-label>
-      <mat-select [(ngModel)]= "searchItem.maxguests"  class="" name="selguests">
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4</mat-option>
-        <mat-option value="5">5</mat-option>
-        <mat-option value="6">6</mat-option>
-      </mat-select>
-        </mat-form-field>
+
+      <label for="selguests">  Guests: </label>
+      <select [(ngModel)]= "searchItem.maxguests"  class="selectr" name="selguests">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+
   </div>
 
   <div class="amenSelect">
-      <mat-form-field>
-      <mat-label for="selpets">  Pets: </mat-label>
-      <mat-select [(ngModel)]= "searchItem.maxpets"  class="" name="selpets">
-        <mat-option value="0">0</mat-option>
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-      </mat-select>
-        </mat-form-field>
+
+      <label for="selpets">  Pets: </label>
+      <select [(ngModel)]= "searchItem.maxpets"  class="selectr" name="selpets">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+
   </div>
       <p>Select any additional requirements:<br></p>
 
@@ -55,9 +56,13 @@
 
 <mat-checkbox [(ngModel)]= "searchItem.hascouch"  name="reqcouch" value="">Couch</mat-checkbox>
 
-      <button (click)="onSubmit()" mat-button>Search</button>
+<div class="spacer">
 
+</div>
 
+      <button (click)="onSubmit()" class = "submitter">Search</button>
+
+</form>
 
   </div>
   </div>

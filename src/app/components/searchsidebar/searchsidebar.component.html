@@ -1,6 +1,6 @@
 <div class="searchsidebar">
 
-  <form class="searchsidebarform" (ngSubmit)="onSubmit()" action="/search" method="post">
+  <form class="searchform" (ngSubmit)="onSubmit()" action="/search" method="post">
 
     <label for="startDate">Check in date: </label>
     <input [(ngModel)]= "searchItem.startdate" type="date" name="startdate" value="">
@@ -46,7 +46,7 @@
     <input  [(ngModel)]= "searchItem.hascouch" type="checkbox" name="reqcouch" value="">
     </div>
 
-    <input type="submit" id="frontsearchsubmit" value="Go">
+    <input type="submit" id="frontsearchsubmit" class="submitter" value="Go">
 
   </form>
 

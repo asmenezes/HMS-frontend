@@ -1,7 +1,7 @@
 
-<mat-card color = "primary" tabindex="0" class="resultitem" *ngFor="let result of results">
+<mat-card class="resultitem" *ngFor="let result of results">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+
     <mat-card-title>{{result.roomname}}</mat-card-title>
     <mat-card-subtitle>Available</mat-card-subtitle>
   </mat-card-header>
@@ -9,10 +9,9 @@
     <p>
     {{result.description}}
     </p>
-  </mat-card-content>
-  <mat-card-actions>
+
+
       <button mat-raised-button color="primary" (click) = "book(result.roomname)" >Book</button>
         <h4 class = "cost">Cost per night ${{result.cost}}</h4>
-
-  </mat-card-actions>
+  </mat-card-content>
 </mat-card>

@@ -1,3 +1,5 @@
+@use 'src/assets/palette' as p
+
 .sidebarSplitter
   display: grid
   grid-template-columns: 1fr 6fr
@@ -10,9 +12,12 @@ mat-form-field, mat-checkbox
 
 
 mat-drawer-content
-  min-height: 90vh
+  min-height: 96vh
 
 mat-drawer
-  background-color: aquamarine
-  padding: 8px
+  background-color: p.$platinum
+  // padding: 8px
   margin-right: 8px
+
+.spacer
+  height: 24vh
