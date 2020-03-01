@@ -4,3 +4,22 @@ img
 
 p
   display: block
+
+.grid-container
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  grid-template-rows: 1fr 1fr 1fr 1max-content 1max-content
+  grid-template-areas: "pic pic pic inf" "pic pic pic inf" "pic pic pic inf" "desv desv desv desv" "rev rev rev rev"
+
+
+.pic
+  grid-area: pic
+
+.ing
+  grid-area: inf
+
+.desv
+  grid-area: desv
+
+.rev
+  grid-area: rev

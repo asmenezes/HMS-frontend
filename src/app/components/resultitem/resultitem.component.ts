@@ -34,7 +34,8 @@ book(roomname:string) {
         startdate: this.searchItem.startdate,
         enddate: this.searchItem.enddate,
         maxguests: this.searchItem.maxguests,
-        maxpets: this.searchItem.maxpets
+        maxpets: this.searchItem.maxpets,
+        roomname: roomname
       };
 
       this.router.navigate(['/book'], { queryParams: params });
