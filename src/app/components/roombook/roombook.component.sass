@@ -1,3 +1,4 @@
+@use 'src/assets/palette' as p
 img
   max-height: 450px
   float: left
@@ -12,14 +13,24 @@ p
   grid-template-areas: "pic pic pic inf" "pic pic pic inf" "pic pic pic inf" "desv desv desv desv" "rev rev rev rev"
 
 
+
 .pic
   grid-area: pic
 
-.ing
+.inf
   grid-area: inf
 
 .desv
   grid-area: desv
+  padding-bottom: 30vh
 
 .rev
   grid-area: rev
+
+mat-drawer
+  height: max-content
+  width: 25vw
+  background-color: p.$platinum
+
+.mat-drawer-content
+  background-color: p.$lightplatinum

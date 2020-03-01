@@ -6,9 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./roombook.component.sass']
 })
 export class RoombookComponent implements OnInit {
-
-roomname:string;
-roomdesc:string;
+  url_string = window.location.href; //window.location.href
+  url = new URL(this.url_string);
+roomname:string = this.url.searchParams.get("roomname");
+roomdesc:string ;
 
   constructor() { }
 

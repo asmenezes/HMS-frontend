@@ -1,11 +1,34 @@
 <div class="roombook">
 
+<mat-drawer-container>
+  <mat-drawer-content>
+  <div class="grid-container" id = "light">
 
-  <div class="grid-container">
-    <div class="pic"></div>
-    <div class="inf"></div>
-    <div class="desv"></div>
-    <div class="rev"></div>
+    <div class="pic">
+    <!-- //  <img src={{img1}} alt=""> -->
+    </div>
+
+    <div class="inf">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="desv">
+      <h1>{{roomname}}</h1>
+        {{roomdesc}}
+        <div class="Hotel Description">
+          <p>Our hotel is great and heres why Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+    <div class="rev">
+
+    </div>
   </div>
+</mat-drawer-content>
+
+<mat-drawer mode="side" position = "end" opened>
 <app-roombookform></app-roombookform>
+
+</mat-drawer>
+
+</mat-drawer-container>
 </div>
