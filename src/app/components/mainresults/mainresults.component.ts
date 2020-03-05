@@ -16,10 +16,6 @@ console.log(e)
   url_string = window.location.href; //window.location.href
   url = new URL(this.url_string);
 
-    today1 = new Date(this.url.searchParams.get("startdate"))
-    today = this.today1
-    mindate1 = new Date(this.url.searchParams.get("enddate"))
-    mindate = this.mindate1
   searchItem:RoomSearchItem = {
 //get params from url
    startdate:  this.url.searchParams.get("startdate"),
@@ -42,36 +38,10 @@ console.log(e)
    });
   }
   onSubmit(){
-    console.log("submitted")
-    let todaypad;
-    let mindatepad;
-    let mindatepad2;
-    let datepad;
-
-    if(this.today.getMonth() > 9){
-    todaypad = ''
-    }else{
-  todaypad = '0'
-    }
-    if(this.today.getDate() > 9){
-      datepad = ''
-    }else{
-    datepad = '0'
-    }
-    if(this.mindate.getMonth() > 9){
-    mindatepad= ''
-    }else{
-    mindatepad = '0'
-    }
-    if(this.mindate.getDate() > 9){
-    mindatepad2 = ''
-    }else{
-    mindatepad2 = '0'
-    }
 
     let params = {
-      startdate: `${this.today.getFullYear()}-${todaypad}${this.today.getMonth() + 1}-${datepad}${this.today.getDate() + 1}`,
-      enddate: `${this.mindate.getFullYear()}-${mindatepad}${this.mindate.getMonth() + 1}-${mindatepad2}${this.mindate.getDate() + 1}`,
+      startdate: this.searchItem.startdate,
+      enddate: this.searchItem.enddate,
       maxguests: this.searchItem.maxguests,
       maxpets: this.searchItem.maxpets
     };
