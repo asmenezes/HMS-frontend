@@ -1,23 +1,21 @@
 <div id="frontsearch">
 
   <div id="welcomeblurb">
-<h1>Welcome</h1>
-<p>To book a room at our hotel search for rooms using the tools below.</p>
+
 
   <form class="searchform" (ngSubmit)="onSubmit()" action='/search' method="post">
 
-    <mat-form-field>
-    <mat-label>Start date</mat-label>
-    <input matInput  [(ngModel)]="today" name = "startdate"  [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <mat-form-field>
-  <mat-label>End date</mat-label>
-  <input matInput [(ngModel)]="mindate" name="enddate" [matDatepicker]="picker2">
-  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-  <mat-datepicker  #picker2></mat-datepicker>
-  </mat-form-field>
+<div class="">
+  <label class = "datelabel" >Start date</label>
+
+  <input type="date"  [(ngModel)]="searchItem.startdate" name = "startdate" class="selectr" >
+</div>
+
+<div class="">
+  <label class = "datelabel">End date</label>
+  <input type="date"  [(ngModel)]="searchItem.enddate" name = "enddate" class="selectr" >
+</div>
+
 
 <div class="">
 
