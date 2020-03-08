@@ -1,32 +1,29 @@
 <div class="bookingform">
-  <mat-form-field appearance="fill">
-  <mat-label>Start date</mat-label>
-  <input matInput  [(ngModel)]="startdate" name = "startdate"  [matDatepicker]="picker">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-<mat-form-field appearance="fill">
-<mat-label>End date</mat-label>
-<input matInput [(ngModel)]="enddate" name="enddate" [matDatepicker]="picker2">
-<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-<mat-datepicker  #picker2></mat-datepicker>
-</mat-form-field>
+  <div>
+  <label>Start date</label>
+  <input [(ngModel)]="startdate" name = "startdate"  type="date" class="selectr">
 
-  <mat-form-field appearance="fill">
+</div>
+<div>
+<label>End date</label>
+<input  [(ngModel)]="enddate" name="enddate" type = "date" class="selectr">
+</div>
+
+  <mat-form-field >
     <mat-label>First Name</mat-label>
     <input matInput>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field >
     <mat-label>Last Name</mat-label>
     <input matInput>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field >
     <mat-label>Phone Number</mat-label>
     <input matInput>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field >
     <mat-label>Email</mat-label>
     <input matInput>
   </mat-form-field>
