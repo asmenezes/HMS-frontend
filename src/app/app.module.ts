@@ -50,9 +50,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { RoombookComponent } from './components/roombook/roombook.component';
 import { RoombookformComponent } from './components/roombookform/roombookform.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
