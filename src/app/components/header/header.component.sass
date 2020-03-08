@@ -1,24 +1,30 @@
+@use 'src/assets/palette' as p
 .heading
   display: inline
   float: right
   margin-top: 0
   padding-top: 0
-  //background-color: green
-  width: 100vw
+  width: 98vw
   position:  absolute
   top: 0
   z-index: 3
-  //margin-right: -6px
+
 
   .headerButton,.headerInput
     display: block
     float: right
-    margin: 5px
+    margin: .5em
 
 
   .loginForm
      display: inline
      float: right
 
+
+
 #SignupButton
-  //margin-right: 9px
+  margin-left: .5em
+  background-color: transparent
+  border-style: solid
+  border-width: thin
+  border-color: p.$spanishgray
