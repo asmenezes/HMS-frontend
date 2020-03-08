@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FrontsearchComponent } from './components/frontsearch/frontsearch.component';
-import { WelcomescreenComponent } from './components/welcomescreen/welcomescreen.component';
 import { SearchsidebarComponent } from './components/searchsidebar/searchsidebar.component';
 import { MainresultsComponent } from './components/mainresults/mainresults.component';
 import { ResultitemComponent } from './components/resultitem/resultitem.component';
@@ -61,7 +60,6 @@ import { RoombookformComponent } from './components/roombookform/roombookform.co
     FooterComponent,
     HeaderComponent,
     FrontsearchComponent,
-    WelcomescreenComponent,
     SearchsidebarComponent,
     MainresultsComponent,
     ResultitemComponent,
