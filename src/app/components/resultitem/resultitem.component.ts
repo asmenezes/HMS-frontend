@@ -11,7 +11,6 @@ import { Router } from '@angular/router'
   styleUrls: ['./resultitem.component.sass']
 })
 export class ResultitemComponent implements OnInit {
-  // @Input() results:RoomResult
 results:RoomResult[];
 url_string = window.location.href; //window.location.href
 url = new URL(this.url_string);
@@ -28,18 +27,18 @@ searchItem:RoomSearchItem = {
   hascouch:false
 }
 
-book(roomname:string) {
-      // window.location.href = `book/?startdate=${this.searchItem.startdate}&enddate=${this.searchItem.enddate}&roomname=${roomname}`
-      let params = {
+book(roomname:string , available:number[]) {
+        let params = {
         startdate: this.searchItem.startdate,
         enddate: this.searchItem.enddate,
         maxguests: this.searchItem.maxguests,
         maxpets: this.searchItem.maxpets,
-        roomname: roomname
+        roomname: roomname,
+        available: available[0]
       };
 
       this.router.navigate(['/book'], { queryParams: params });
-      //add room type
+
 }
 constructor(private searchService:SearchservService,private router:Router) { }
 

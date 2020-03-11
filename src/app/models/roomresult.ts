@@ -16,4 +16,5 @@ export class RoomResult
       url:string;
       }
     ]
+    available?:number[];
   }
