@@ -3,8 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RoomSearchItem } from '../models/roomsearchitem';
 
-
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type' : 'Application/JSON'

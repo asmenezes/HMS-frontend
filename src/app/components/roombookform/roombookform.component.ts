@@ -12,7 +12,7 @@ export class RoombookformComponent implements OnInit {
   startdate =  this.url.searchParams.get("startdate");
   enddate = this.url.searchParams.get("enddate");
   roomname =  this.url.searchParams.get("roomname");
-  available= this.url.searchParams.get("available")
+  available= this.url.searchParams.get("available");
 
   constructor() { }
 
