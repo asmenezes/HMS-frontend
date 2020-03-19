@@ -15,11 +15,16 @@ import { SearchservService} from '../../services/searchserv.service'
 export class FrontsearchComponent implements OnInit {
 
 @Output() searchBookings: EventEmitter<RoomSearchItem> = new EventEmitter();
+  dateob = new Date()
+  today:String = `${this.dateob.getFullYear()}-${(this.dateob.getMonth()+1).toString().padStart(2,"0")}-${this.dateob.getDate().toString().padStart(2,"0")}`;
 
+  dateob2 = new Date(this.dateob.setDate(this.dateob.getDate() + 1));
 
+  tomorrow:String = `${this.dateob2.getFullYear()}-${(this.dateob2.getMonth()+1).toString().padStart(2,"0")}-${this.dateob2.getDate().toString().padStart(2,"0")}`;
+  
   searchItem:RoomSearchItem = {
-     startdate: "1997-06-08",
-     enddate:  "2020-08-06",
+     startdate: this.today,
+     enddate:  this.tomorrow,
      maxguests:  1,
      maxpets:  0
    }
