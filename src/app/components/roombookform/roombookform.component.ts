@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BookservService} from '../../services/bookserve.service'
+import { BookservService } from '../../services/bookserv.service'
 import { BookingForm } from '../../models/bookingform'
 import { Router } from '@angular/router'
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./roombookform.component.sass']
 })
 export class RoombookformComponent implements OnInit {
-
+ 
   url_string = window.location.href;
   url = new URL(this.url_string);
   startdate =  this.url.searchParams.get("startdate");
