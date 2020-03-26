@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { RoomSearchItem } from '../../models/roomsearchitem';
 import { Router } from '@angular/router'
-import  * as Variables from '../../variables'
+import  * as SearchVariables from '../../searchvariables'
 
 import { HttpClientModule } from '@angular/common/http';
 import { SearchservService} from '../../services/searchserv.service'
@@ -16,7 +16,12 @@ import { SearchservService} from '../../services/searchserv.service'
 export class FrontsearchComponent implements OnInit {
 
 @Output() searchBookings: EventEmitter<RoomSearchItem> = new EventEmitter();
-
+  searchItem:RoomSearchItem = {
+    startdate: SearchVariables.getSearchSD(),
+    enddate: SearchVariables.getSearchED(),
+    maxguests: SearchVariables.getSearchMaxGuests(),
+    maxpets: SearchVariables.getSearchMaxpets()
+  }
 
   constructor(private searchService:SearchservService,private router:Router) { }
 
@@ -32,6 +37,10 @@ export class FrontsearchComponent implements OnInit {
       maxguests: this.searchItem.maxguests,
       maxpets: this.searchItem.maxpets
     };
+    SearchVariables.setSearchSD(params.startdate);
+    SearchVariables.setSearchED(params.enddate);
+    SearchVariables.setSearchMaxGuests(params.maxguests);
+    SearchVariables.setSearchMaxpets(params.maxpets);
 
     this.router.navigate(['/search'], { queryParams: params });
 
