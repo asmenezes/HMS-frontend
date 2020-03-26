@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchservService} from '../../services/searchserv.service'
-import { RoomSearchItem } from '../../models/roomsearchitem'
+import { SearchservService} from '../../services/searchserv.service';
+import { RoomSearchItem } from '../../models/roomsearchitem';
 import { HttpClientModule } from '@angular/common/http';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import  * as SearchVariables from '../../searchvariables';
 
 @Component({
   selector: 'app-mainresults',
@@ -13,20 +14,18 @@ export class MainresultsComponent implements OnInit {
   search(e){
 console.log(e)
   };
-  url_string = window.location.href; //window.location.href
-  url = new URL(this.url_string);
+  // url_string = window.location.href; //window.location.href
+  // url = new URL(this.url_string);
 
   searchItem:RoomSearchItem = {
-//get params from url
-   startdate:  this.url.searchParams.get("startdate"),
-   enddate:  this.url.searchParams.get("enddate"),
-    maxguests:  Number(this.url.searchParams.get("maxguests")),
-    maxpets:  Number(this.url.searchParams.get("maxpets")),
-    nightlycost:900,
-    hasmicro: (this.url.searchParams.get("hasmicro") == "true")?  (this.url.searchParams.get("hasmicro") == "true") : false,
-    haskitch: (this.url.searchParams.get("haskitch") == "true")?  (this.url.searchParams.get("haskitch") == "true") : false,
-    hasfridge: (this.url.searchParams.get("hasfridge") == "true")?  (this.url.searchParams.get("hasfridge") == "true") : false,
-    hascouch: (this.url.searchParams.get("hascouch") == "true")?  (this.url.searchParams.get("hascouch") == "true") : false
+    startdate: SearchVariables.getSearchSD(),
+    enddate: SearchVariables.getSearchED(),
+    maxguests: SearchVariables.getSearchMaxGuests(),
+    maxpets: SearchVariables.getSearchMaxpets(),
+    hasmicro: SearchVariables.getSearchHasMicro(),
+    haskitch: SearchVariables.getSearchHasKitch(),
+    hasfridge: SearchVariables.getSearchHasFridge(),
+    hascouch: SearchVariables.getSearchHasCouch()
   }
 
 
