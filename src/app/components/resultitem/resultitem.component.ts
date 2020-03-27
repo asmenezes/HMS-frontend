@@ -41,7 +41,6 @@ export class ResultitemComponent implements OnInit {
   constructor(private searchService: SearchservService, private router: Router) {
     this.searchService.searchResult.subscribe((result) => {
       this.onSearch(result);
-
     });
   }
 
@@ -51,8 +50,8 @@ export class ResultitemComponent implements OnInit {
     });
   }
   onSearch(result): void {
-    console.log(result)
     this.results = result
+    // Add in result globals support
   }
 
 }
