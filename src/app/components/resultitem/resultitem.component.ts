@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RoomResult } from '../../models/roomresult';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchservService} from '../../services/searchserv.service'
-import { RoomSearchItem } from '../../models/roomsearchitem'
-import { Router } from '@angular/router'
+import { SearchservService } from '../../services/searchserv.service';
+import { RoomSearchItem } from '../../models/roomsearchitem';
+import { Router } from '@angular/router';
+import * as SearchVariables from '../../searchvariables';
 
 @Component({
   selector: 'app-resultitem',
@@ -11,42 +12,47 @@ import { Router } from '@angular/router'
   styleUrls: ['./resultitem.component.sass']
 })
 export class ResultitemComponent implements OnInit {
-results:RoomResult[];
-url_string = window.location.href; //window.location.href
-url = new URL(this.url_string);
+  results: RoomResult[];
 
-searchItem:RoomSearchItem = {
- startdate:  this.url.searchParams.get("startdate"),
- enddate:  this.url.searchParams.get("enddate"),
-  maxguests:  Number(this.url.searchParams.get("maxguests")),
-  maxpets:  Number(this.url.searchParams.get("maxpets")),
-  nightlycost:900,
-  hasmicro:false,
-  haskitch:false,
-  hasfridge:false,
-  hascouch:false
-}
+  searchItem: RoomSearchItem = {
+    startdate: SearchVariables.getSearchSD(),
+    enddate: SearchVariables.getSearchED(),
+    maxguests: SearchVariables.getSearchMaxGuests(),
+    maxpets: SearchVariables.getSearchMaxpets(),
+    hasmicro: SearchVariables.getSearchHasMicro(),
+    haskitch: SearchVariables.getSearchHasKitch(),
+    hasfridge: SearchVariables.getSearchHasFridge(),
+    hascouch: SearchVariables.getSearchHasCouch()
+  }
 
-book(roomname:string , available:number[]) {
-        let params = {
-        startdate: this.searchItem.startdate,
-        enddate: this.searchItem.enddate,
-        maxguests: this.searchItem.maxguests,
-        maxpets: this.searchItem.maxpets,
-        roomname: roomname,
-        available: available[0]
-      };
+  book(roomname: string, available: number[]) {
+    let params = {
+      startdate: this.searchItem.startdate,
+      enddate: this.searchItem.enddate,
+      maxguests: this.searchItem.maxguests,
+      maxpets: this.searchItem.maxpets,
+      roomname: roomname,
+      available: available
+    };
 
-      this.router.navigate(['/book'], { queryParams: params });
+    this.router.navigate(['/book'], { queryParams: params });
 
-}
-constructor(private searchService:SearchservService,private router:Router) { }
+  }
+  constructor(private searchService: SearchservService, private router: Router) {
+    this.searchService.searchResult.subscribe((result) => {
+      this.onSearch(result);
 
-ngOnInit(): void {
-  this.searchService.searchRooms(this.searchItem).subscribe((res) => {
-    this.results = res
-    console.log(this.results)
-  });
-}
+    });
+  }
+
+  ngOnInit(): void {
+    this.searchService.searchRooms(this.searchItem).subscribe((res) => {
+      this.results = res
+    });
+  }
+  onSearch(result): void {
+    console.log(result)
+    this.results = result
+  }
 
 }

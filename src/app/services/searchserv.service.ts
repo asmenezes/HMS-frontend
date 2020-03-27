@@ -1,11 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RoomSearchItem } from '../models/roomsearchitem';
+import { RoomResult } from '../models/roomresult';
+
+
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type' : 'Application/JSON'
+    'Content-Type': 'Application/JSON'
   })
 }
 
@@ -15,14 +18,16 @@ const httpOptions = {
 
 export class SearchservService {
 
-  constructor(private http:HttpClient) { }
+  @Output() searchResult: EventEmitter<any> = new EventEmitter();
 
-  searchURL:string = 'https://hms-back-end.herokuapp.com/search';
+  constructor(private http: HttpClient) {
+    this.searchResult = new EventEmitter();
+  }
 
-  searchRooms(searchItem:RoomSearchItem ):Observable<any>
-{
-  console.log("submitted search service")
-  console.log(this.http.post<any>(this.searchURL,searchItem,httpOptions))
-    return this.http.post<RoomSearchItem>(this.searchURL,searchItem,httpOptions);
-}
+  searchURL: string = 'https://hms-back-end.herokuapp.com/search';
+
+  searchRooms(searchItem: RoomSearchItem): Observable<any> {
+    this.http.post<RoomResult>(this.searchURL, searchItem, httpOptions).subscribe(res => this.searchResult.emit(res))
+    return this.http.post<RoomResult>(this.searchURL, searchItem, httpOptions);
+  }
 }

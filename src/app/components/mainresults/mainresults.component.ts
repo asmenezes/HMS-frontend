@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import  * as SearchVariables from '../../searchvariables';
 
+
 @Component({
   selector: 'app-mainresults',
   templateUrl: './mainresults.component.html',
@@ -32,9 +33,9 @@ console.log(e)
   constructor(private searchService:SearchservService,private router:Router) { }
 
   ngOnInit(): void {
-   this.searchService.searchRooms(this.searchItem).subscribe((res) => {
-     console.log(res)
-   });
+   // this.searchService.searchRooms(this.searchItem).subscribe((res) => {
+   //   console.log(res)
+   // });
   }
   onSubmit(){
 
@@ -44,7 +45,6 @@ console.log(e)
       maxguests: this.searchItem.maxguests,
       maxpets: this.searchItem.maxpets
     };
-
 
     // this.router.navigate(['/search'], { queryParams: params });
     this.searchService.searchRooms(this.searchItem).subscribe((res) => {
