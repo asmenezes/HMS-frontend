@@ -27,7 +27,10 @@ export class SearchservService {
   searchURL: string = 'https://hms-back-end.herokuapp.com/search';
 
   searchRooms(searchItem: RoomSearchItem): Observable<any> {
-    this.http.post<RoomResult>(this.searchURL, searchItem, httpOptions).subscribe(res => this.searchResult.emit(res))
+    this.http.post<RoomResult>(this.searchURL, searchItem, httpOptions).subscribe(res => {
+      this.searchResult.emit(res);
+      return res
+    });
     return this.http.post<RoomResult>(this.searchURL, searchItem, httpOptions);
   }
 }
