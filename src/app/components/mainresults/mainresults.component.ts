@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchservService} from '../../services/searchserv.service';
+import { SearchservService } from '../../services/searchserv.service';
 import { RoomSearchItem } from '../../models/roomsearchitem';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-import  * as SearchVariables from '../../searchvariables';
+import * as SearchVariables from '../../searchvariables';
+import * as RoomInfo from '../../roominfo';
 
 
 @Component({
@@ -12,13 +13,13 @@ import  * as SearchVariables from '../../searchvariables';
   styleUrls: ['./mainresults.component.sass']
 })
 export class MainresultsComponent implements OnInit {
-  search(e){
-console.log(e)
+  search(e) {
+    console.log(e)
   };
   // url_string = window.location.href; //window.location.href
   // url = new URL(this.url_string);
 
-  searchItem:RoomSearchItem = {
+  searchItem: RoomSearchItem = {
     startdate: SearchVariables.getSearchSD(),
     enddate: SearchVariables.getSearchED(),
     maxguests: SearchVariables.getSearchMaxGuests(),
@@ -30,14 +31,14 @@ console.log(e)
   }
 
 
-  constructor(private searchService:SearchservService,private router:Router) { }
+  constructor(private searchService: SearchservService, private router: Router) { }
 
   ngOnInit(): void {
-   // this.searchService.searchRooms(this.searchItem).subscribe((res) => {
-   //   console.log(res)
-   // });
+    // this.searchService.searchRooms(this.searchItem).subscribe((res) => {
+    //   console.log(res)
+    // });
   }
-  onSubmit(){
+  onSubmit() {
 
     let params = {
       startdate: this.searchItem.startdate,
@@ -48,7 +49,7 @@ console.log(e)
 
     // this.router.navigate(['/search'], { queryParams: params });
     this.searchService.searchRooms(this.searchItem).subscribe((res) => {
-      console.log(res)
+      RoomInfo.setResults(res);
 
     });
   }

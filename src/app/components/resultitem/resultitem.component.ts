@@ -5,6 +5,7 @@ import { SearchservService } from '../../services/searchserv.service';
 import { RoomSearchItem } from '../../models/roomsearchitem';
 import { Router } from '@angular/router';
 import * as SearchVariables from '../../searchvariables';
+import * as RoomInfo from '../../roominfo';
 
 @Component({
   selector: 'app-resultitem',
@@ -31,8 +32,7 @@ export class ResultitemComponent implements OnInit {
       enddate: this.searchItem.enddate,
       maxguests: this.searchItem.maxguests,
       maxpets: this.searchItem.maxpets,
-      roomname: roomname,
-      available: available
+      roomname: roomname
     };
 
     this.router.navigate(['/book'], { queryParams: params });
@@ -51,6 +51,7 @@ export class ResultitemComponent implements OnInit {
   }
   onSearch(result): void {
     this.results = result
+    RoomInfo.setResults(result)
     // Add in result globals support
   }
 
