@@ -5,7 +5,7 @@ import { BookingForm } from '../models/bookingform';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type' : 'Application/JSON'
+    'Content-Type': 'Application/JSON'
   })
 }
 
@@ -15,12 +15,12 @@ const httpOptions = {
 
 export class BookservService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  bookURL:string = 'https://hms-back-end.herokuapp.com/book';
+  bookURL: string = 'https://hms-back-end.herokuapp.com/book';
 
-  bookrooms(booking:BookingForm):Observable<any>{
+  bookrooms(booking: BookingForm): Observable<any> {
     console.log("booked")
-    return this.http.post<BookingForm>(this.bookURL,booking,httpOptions);
+    return this.http.post<BookingForm>(this.bookURL, booking, httpOptions);
   }
 }

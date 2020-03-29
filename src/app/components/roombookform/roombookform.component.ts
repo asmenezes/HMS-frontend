@@ -17,10 +17,24 @@ export class RoombookformComponent implements OnInit {
   enddate = this.url.searchParams.get("enddate");
   roomname = this.url.searchParams.get("roomname");
   available = RoomInfo.getAvailable(this.roomname);
-  constructor() { }
+  constructor(private bookservService: BookservService) { }
 
   ngOnInit(): void {
 
   }
 
+  onSubmit() {
+    //get pid from account
+    let booking: BookingForm = {
+      "pid": 0,// get actual account pid,
+      "startdate": this.startdate,
+      "enddate": this.enddate,
+      "roomnum": this.available
+
+    }
+    this.bookservService.bookrooms(booking).subscribe((res) => {
+      console.log(res)
+
+    });
+  }
 }

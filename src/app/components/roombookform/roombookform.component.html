@@ -1,39 +1,39 @@
 <div class="bookingform">
   <div>
-  <label>Start date</label>
-  <input [(ngModel)]="startdate" name = "startdate"  type="date" class="selectr">
+    <label>Start date</label>
+    <input [(ngModel)]="startdate" name="startdate" type="date" class="selectr">
 
-</div>
-<div>
-<label>End date</label>
-<input  [(ngModel)]="enddate" name="enddate" type = "date" class="selectr">
-</div>
+  </div>
+  <div>
+    <label>End date</label>
+    <input [(ngModel)]="enddate" name="enddate" type="date" class="selectr">
+  </div>
 
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>First Name</mat-label>
     <input matInput>
   </mat-form-field>
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>Last Name</mat-label>
 
     <input matInput>
   </mat-form-field>
 
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>Phone Number</mat-label>
     <input matInput>
   </mat-form-field>
 
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>Email</mat-label>
     <input matInput>
   </mat-form-field>
 
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>Notes</mat-label>
     <textarea matInput></textarea>
   </mat-form-field>
-  <button type="submit" class = "submitter bk">Book</button>
+  <button type="submit" (click)="onSubmit()" class="submitter bk">Book</button>
   <div class="spacer">
 
   </div>
