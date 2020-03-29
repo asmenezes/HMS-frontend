@@ -25,24 +25,3 @@ export function getAvailable(inroomname: string): number[] {
   console.log(allResults[i].available)
   return allResults[i].available
 }
-// Set selecteds and get selecteds
-
-// {
-//   roomname:string;
-//   numavail?:number;
-//   totalcost?:number;
-//   numbeds?:number;
-//   maxguests?:number;
-//   maxpets?:number;
-//   roomdesc?:string;
-//   hasmicro?:boolean;
-//   haskitch?:boolean;
-//   hasfridge?:boolean;
-//   imgs?:
-//   [
-//     {
-//     url:string;
-//     }
-//   ]
-//   available?:number[];
-// }
