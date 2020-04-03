@@ -5,6 +5,10 @@ let allResults: RoomResult[] = [
     roomname: ""
   }
 ]
+
+let roomInfo: [
+
+]
 //set all and possibly get all (Might need to deep copy, but don't think I do)
 
 export function getResults(): RoomResult[] {

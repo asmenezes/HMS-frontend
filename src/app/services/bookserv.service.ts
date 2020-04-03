@@ -23,4 +23,8 @@ export class BookservService {
     console.log("booked")
     return this.http.post<BookingForm>(this.bookURL, booking, httpOptions);
   }
+  //make a get room info properly
+  getRoomInfo(inroomname: string): Observable<any> {
+    return this.http.get<any>(this.bookURL, inroomname, httpOptions)
+  }
 }
